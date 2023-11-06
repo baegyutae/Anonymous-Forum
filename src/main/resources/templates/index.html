@@ -2,12 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>게시판</title>
-    <!-- CSS와 JavaScript 파일을 포함시키세요 -->
 </head>
 <body>
 
 <h2>게시글 작성</h2>
-<form action="/posts" method="post">
+<form action="/api/posts" method="post">
     제목: <input type="text" name="title"><br>
     작성자명: <input type="text" name="author"><br>
     비밀번호: <input type="password" name="password"><br>
@@ -27,7 +26,7 @@
     </tr>
     </thead>
     <tbody>
-    <!-- 게시글 목록을 서버에서 가져와서 여기에 반복적으로 나열합니다. -->
+
     <tr th:each="post : ${posts}">
         <td th:text="${post.title}"></td>
         <td th:text="${post.author}"></td>
@@ -37,7 +36,7 @@
     </tbody>
 </table>
 
-<!-- 여기에 게시글을 조회, 수정, 삭제하는 모달이나 별도의 페이지를 추가할 수 있습니다. -->
+
 
 </body>
 </html>

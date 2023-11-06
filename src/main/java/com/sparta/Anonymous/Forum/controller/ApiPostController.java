@@ -22,7 +22,7 @@ public class ApiPostController {
         this.postService = postService;
     }
 
-    @PostMapping("/{id}")
+    @PostMapping
     public PostDto createPost(@RequestBody PostDto postDto) {
         Post post = new Post(postDto.getTitle(), postDto.getAuthor(), postDto.getContent(), postDto.getPassword());
         Post createdPost = postService.createPost(post);

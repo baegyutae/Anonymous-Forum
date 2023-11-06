@@ -9,13 +9,20 @@ public class PostDto {
     private String title;
     private String author;
     private String content;
+    private String password;
     private LocalDateTime createdAt;
+
+    public PostDto() {
+
+    }
+
 
     public PostDto(Post post) {
         this.id = post.getId();
         this.title = post.getTitle();
         this.author = post.getAuthor();
         this.content = post.getContent();
+        this.password = post.getPassword();
         this.createdAt = post.getCreatedAt();
     }
 
@@ -51,15 +58,19 @@ public class PostDto {
         this.content = content;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public String getPassword() {
-        return null;
     }
 }
